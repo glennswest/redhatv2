@@ -1,39 +1,15 @@
-/* Thesis board, Lego and duplo compatible
-Daniel.schneider@tecfa.unige.ch
-oct. 2012
 
-History:
-- Version 1.0: first version
-- Version 1.1: 2nd board version a bit bigger
-- Version 1.2: first towers !
-- Version 1.3: more towers and bricks
-
-Instructions:
-- print calibration first. If the piece doesn't fit, then act, i.e. cope with it or adjust the doblo-factory-x-y parameters
-- print a chosen module by uncommenting (see below)
-
-*/
-
-// Define scale - must define before doblo-factory is loaded
-// 0.5 = Lego and 1 = Duplo compatible
-
-// SCALE=1;   // DUPLO Size (not fully tested)
 SCALE =0.5;   // Lego size
-// SCALE=0.25; // Half lego size (1/8 volume)
-
-// setting LEGO_DIV to true will make Lego models higher, i.e. height units will be use "Lego heights" 3.2mm instead of the 2.4mm/4.8mm Duplo proportions. This param will not affect DUPLOs (scale > 0.6)
 
 LEGO_DIV = true;     // height units = 3.2mm, use for true Lego height divisions
-// LEGO_DIV = false; // height units = 2.4mm. 
 
-// LOAD doblo factory
 
+//include <DobloFactory/doblo-factory.scad>;
 include <doblo-factory-1-12.scad>;
-
 // ----------------  Execute models. Uncomment only one
 
 // thesis_board_1 ();
-// thesis_board_2 ();
+thesis_board_2 ();
 
 // tower_data_1 (); // --- needs lettering with netfabb
 // tower_central (); // 
@@ -49,7 +25,7 @@ include <doblo-factory-1-12.scad>;
 // doblo   (0,   0,   0,   2,   2,    2,  false, false ); // 2x2 for smilies
 // doblo   (0,   0,   0,   4,   2,    3,  false, false ); // 4x2x3 chapters & issues
 // doblo   (0,   0,   0,   4,   2,    2,  false, false ); // 4x2x2 alt. chapters & issues
-// doblo   (0,   0,   0,   6,   2,    3,  false, false ); // 6x2x3 tasks
+doblo   (0,   0,   0,   6,   2,    3,  false, false ); // 6x2x3 tasks
 // doblo   (0,   0,   0,   6,   2,    2,  false, false ); // 6x2x2 tasks
 // doblo   (0,   0,   0,   8,   2,    2,  false, false ); // 8x2x2 tasks for lego board
 // doblo   (0,   0,   0,   8,   3,    2,  false, false ); // 8x3x2 board categories
@@ -63,12 +39,12 @@ doblo   (0,   0,   0,   4,   4,    2,  false, false ); // 4x4 alternative
 
 // doblo   (0,   0,   0,   2,   2,    1,  false, false ); // 2x2 for tiling
 // doblo   (0,   0,   0,   4,   2,    1,  false, false ); // 4x2 for tiling
-// doblo   (0,   0,   0,   6,   2,    1,  false, false ); // 6x2x1 labels wall board
+doblo   (0,   0,   0,   6,   2,    1,  false, false ); // 6x2x1 labels wall board
 
 // --- lego bricks
 
 // doblo   (0,   0,   0,   4,   2,    3,  true, false ); // calibration brick
-// doblo   (0,   0,   0,   2,   2,    3,  true, false ); // 2x2 nibbles for towers
+doblo   (0,   0,   0,   2,   2,    3,  true, false ); // 2x2 nibbles for towers
 // doblo   (0,   0,   0,   2,   1,    3,  true, false ); // 2x1 nibbles for towers
 
 
